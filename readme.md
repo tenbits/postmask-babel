@@ -6,7 +6,7 @@ Compiles functions in `mask` templates to es5
 
 ### Configurate
 
-mask.cfg('postmask-babel', BabelOptions);
+`mask.cfg('postmask-babel', BabelOptions);``
 
 > Default: `{"presets":["es2015"]}`
 
@@ -17,10 +17,11 @@ Transform scripts at runtime. Use this only in some demos and in dev, not for pr
 
 ###### Usage
 
-```
+```bash
 npm i babel-standalone --save-dev
 npm i postmask-babel --save-dev
 npm i maskjs --save
+```
 
 ```html
 <script src="/node_modules/babel-standalone/babel.min.js"></script>
