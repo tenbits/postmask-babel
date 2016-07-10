@@ -1,6 +1,7 @@
 [PostMask Babel Compiler](https://github.com/atmajs/postmask)
 -----
-[![Build Status](https://travis-ci.org/atmajs/postmask-babel.png?branch=master)](https://travis-ci.org/atmajs/postmask-babel)
+[![Build Status](https://travis-ci.org/tenbits/postmask-babel.svg?branch=master)](https://travis-ci.org/tenbits/postmask-babel)
+[![NPM version](https://badge.fury.io/js/postmask-babel.svg)](http://badge.fury.io/js/postmask-babel)
 
 Compiles functions in `mask` templates to es5
 
