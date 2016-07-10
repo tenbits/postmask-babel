@@ -7,7 +7,7 @@ module.exports = {
 				'/node_modules/maskjs/lib/mask.js::mask',
 				'/lib/runtime.js'
 			],
-			tests: 'dom.test'
+			tests: 'test/dom.test'
 		},
 		node: {
 			exec: 'node',
@@ -15,7 +15,7 @@ module.exports = {
 				'/node_modules/maskjs/lib/mask.js::mask',
 				'/lib/optimize.js'
 			],
-			tests: 'node.test'
+			tests: 'test/node.test'
 		}
 	}
 }

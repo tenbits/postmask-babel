@@ -1,7 +1,5 @@
-UTest({
-	
+UTest({	
 	'should preprocess es6' (done) {
-
 		var template = `
 			define Foo {
 
@@ -23,6 +21,5 @@ UTest({
 			has_(code, 'function');
 			done();
 		})
-	},
-	
+	}
 });
