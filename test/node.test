@@ -1,0 +1,28 @@
+UTest({
+	
+	'should preprocess es6' (done) {
+
+		var template = `
+			define Foo {
+
+				function onRenderStart () {
+
+					var fn = () => {
+						return this.compoName;
+					}
+
+					this.model = fn();
+				}
+
+				h4 > '~[.]'
+			}
+		`;
+		mask.optimize(mask.parse(template), (ast) => {
+			var code = mask.stringify(ast, 4);
+			has_(code, '_this');
+			has_(code, 'function');
+			done();
+		})
+	},
+	
+});

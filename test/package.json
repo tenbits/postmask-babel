@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "atma": "latest",
+    "atma-loader-postmask": "latest"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/atma test --config config.js"
+  },
+  "atma": {
+    "plugins": [
+      "atma-loader-postmask"
+    ],
+    "settings": {
+      "atma-loader-postmask": {
+        "plugins": [
+          "./optimizers/foo.js"
+        ]
+      }
+    }
+  }
+}
