@@ -7,7 +7,7 @@ Compiles functions in `mask` templates to es5
 
 ### Configurate
 
-`mask.cfg('postmask-babel', BabelOptions);``
+`mask.cfg('postmask-babel', BabelOptions);`
 
 > Default: `{"presets":["es2015"]}`
 
