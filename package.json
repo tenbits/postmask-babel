@@ -3,7 +3,7 @@
   "version": "1.0.6",
   "description": "Babel optimizer for postmask",
   "author": "Alexander Kit (alex.kit@atmajs.com)",
-  "main": "index.js",
+  "main": "lib/optimize.js",
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.10.4",
@@ -21,7 +21,12 @@
       "atma-loader-babel"
     ],
     "settings": {
-      "atma-loader-babel": {}
+      "atma-loader-babel": {
+        "extensions": [
+          "es6",
+          "test"
+        ]
+      }
     }
   }
 }
