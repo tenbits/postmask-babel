@@ -27,7 +27,8 @@ function fn_wrap (node) {
 	return `(function (${node.args.join(',')}) { ${node.body} })`;
 }
 function fn_unwrap (code) {
-	var start = code.indexOf('{') + 1,
+	var fnStart = code.indexOf('(function'),
+		start = code.indexOf('{', fnStart) + 1,
 		end = code.lastIndexOf('}');
 
 	return code.substring(start, end);
