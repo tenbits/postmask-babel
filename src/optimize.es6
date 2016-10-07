@@ -12,7 +12,10 @@ function optimizeNode (node, next) {
 	// as it contains plugin wich transforms root this to undefined;
 
 	var config = mask.cfg('postmask-babel') || { 
-		presets: ['es2015']
+		presets: ['es2015'],
+		plugins: [
+          "external-helpers"
+        ]
 	};
 
 	var babel = require('babel-core');
