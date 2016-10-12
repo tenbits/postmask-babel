@@ -27,7 +27,11 @@ function optimizeNode (node, next) {
 }
 
 function fn_wrap (node) {
-	return `(function (${node.args.join(',')}) { ${node.body} })`;
+	var args = node.args, str = '';
+	if (args != null) {
+		str = args.map(x => x.prop).join(',');
+	}
+	return `(function (${str}) { ${node.body} })`;
 }
 function fn_unwrap (code) {
 	var fnStart = code.indexOf('(function'),

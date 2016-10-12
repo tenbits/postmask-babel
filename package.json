@@ -1,6 +1,6 @@
 {
   "name": "postmask-babel",
-  "version": "1.1.10",
+  "version": "1.1.11",
   "description": "Babel optimizer for postmask",
   "author": "Alexander Kit (alex.kit@atmajs.com)",
   "main": "lib/optimize.js",
