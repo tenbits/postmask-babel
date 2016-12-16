@@ -1,8 +1,9 @@
+var _mask = null;
 module.exports = function (mask) {
-	
+	_mask = mask;
 	[ 'function', 'slot', 'pipe' ].forEach(method => {
 
-		mask.registerOptimizer(method, optimizeNode);
+		_mask.registerOptimizer(method, optimizeNode);
 	});
 };
 
@@ -11,7 +12,7 @@ function optimizeNode (node, next) {
 	// but then we can't use popular presets for babel like es2015,
 	// as it contains plugin wich transforms root this to undefined;
 
-	var config = mask.cfg('postmask-babel') || { 
+	var config = _mask.cfg('postmask-babel') || { 
 		presets: ['es2015'],
 		plugins: [
           "external-helpers"
@@ -31,10 +32,18 @@ function fn_wrap (node) {
 	if (args != null) {
 		str = args.map(x => x.prop).join(',');
 	}
-	return `(function (${str}) { ${node.body} })`;
+	var isAsync = node.flagAsync;
+	if (isAsync) {
+		node.flagAsync = false;
+	}
+	return `(${isAsync ? 'async ' : ''}function (${str}) { ${node.body} })`;
 }
 function fn_unwrap (code) {
-	var fnStart = code.indexOf('(function'),
+	var match = /\(\s*(async\s+)?function/.exec(code);
+	if (match == null) {
+		throw new Error('Can`t find the prefix from code: ' + code);
+	}
+	var fnStart = match.index,
 		start = code.indexOf('{', fnStart) + 1,
 		end = code.lastIndexOf('}');
 
