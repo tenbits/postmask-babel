@@ -12,8 +12,7 @@ module.exports = {
 		node: {
 			exec: 'node',
 			env: [
-				'/node_modules/maskjs/lib/mask.js::mask',
-				'/lib/optimize.js'
+				
 			],
 			tests: 'test/node.test'
 		}
